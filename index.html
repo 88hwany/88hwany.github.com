@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DeepLink</title>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var visitTime = (new Date()).getTime();
+
+            var isAOS = /android/i.test(navigator.userAgent);
+            var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+            if (isAOS) {
+                location.href = "https://play.google.com/store/apps/details?id=xyz.leepl.play7";
+            } else if (isIOS) {
+                location.href = "https://apps.apple.com/app/id00"
+            }
+        }
+    </script>
 </head>
 <body>
-    <h1>HOME</h1>
+    <h1>AppLint Test</h1>
 </body>
 </html>
